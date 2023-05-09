@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Unwaste Network</title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="#">
+    <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="#">
+    <!-- Favicon icon -->
+    <link rel="icon" href="..\..\files\assets\images\favicon.ico" type="image/x-icon">
+    <!-- Google font--><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="..\..\files\bower_components\bootstrap\css\bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\icon\themify-icons\themify-icons.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\icon\icofont\css\icofont.css">
+    <!-- feather Awesome -->
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\icon\feather\css\feather.css">
+    <!--foo table Grid-->
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\pages\foo-table\css\footable.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\pages\foo-table\css\jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\pages\foo-table\css\footable.standalone.min.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\css\style.css">
+    <link rel="stylesheet" type="text/css" href="./Css/Index.css">
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\css\jquery.mCustomScrollbar.css">
+
+</head>
+
+<body>
+<!-- Pre-loader start -->
+<div class="theme-loader">
+    <div class="ball-scale">
+        <div class='contain'>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+        <nav class="navbar header-navbar pcoded-header">
+            <div class="navbar-wrapper">
+
+                <div class="navbar-logo">
+                    <a class="mobile-menu" id="mobile-collapse" href="#!">
+                        <i class="feather icon-menu"></i>
+                    </a>
+                    <a href="">
+                        <img class="img-fluid" src="../..\files/assets/images/Logo-1.jpeg" alt="Theme-Logo">
+                    </a>
+                    <a class="mobile-options">
+                        <i class="feather icon-more-horizontal"></i>
+                    </a>
+                </div>
+
+                <div class="navbar-container container-fluid">
+                    <ul class="nav-left">
+                        <li class="header-search">
+                            <div class="main-search morphsearch-search">
+                                <div class="input-group">
+                                    <span class="input-group-addon search-close"><i class="feather icon-x"></i></span>
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-addon search-btn"><i class="feather icon-search"></i></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#!" onclick="javascript:toggleFullScreen()">
+                                <i class="feather icon-maximize full-screen"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav-right">
+                       
+                        <li class="user-profile header-notification">
+                            <div class="dropdown-primary dropdown">
+                                <div class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="..\..\files\assets\images\avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                    <span id="user"></span>
+                                    <i class="feather icon-chevron-down"></i>
+                                </div>
+                                <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                    <li>
+                                        <a href="../auth-normal-sign-in.htm">
+                                            <i class="feather icon-log-out"></i> Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+       
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+                <nav class="pcoded-navbar">
+                    <div class="pcoded-inner-navbar main-menu">
+                
+                        <ul class="pcoded-item pcoded-left-item">
+                            <li class=" ">
+                                <a href="../Dashboard/dashboard_Index.htm">
+                                    <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                                    <span class="pcoded-mtext">Dashboard</span>
+                                </a>
+                             
+                            </li>
+                            <li class="pcoded-hasmenu ">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <span class="pcoded-mtext">Admin User</span>
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class="">
+                                        <a href="../Admin-user/Add-admin.htm">
+                                            <span class="pcoded-mtext">New Admin</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="../Admin-user/Admin-List.htm">
+                                            <span class="pcoded-mtext">Admin List</span>
+                                        </a>
+                                    </li>
+                
+                                </ul>
+                            </li>
+                            <li class="pcoded-hasmenu ">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="fa fa-user-times"></i></span>
+                                    <span class="pcoded-mtext">Driver Management</span>
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class="">
+                                        <a href="../Driver-management/Add-Driver.htm">
+                                            <span class="pcoded-mtext">New Driver</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="../Driver-management/Driver-List.htm">
+                                            <span class="pcoded-mtext">Driver List</span>
+                                        </a>
+                                    </li>
+                
+                                </ul>
+                            </li>
+                            <li class="pcoded-hasmenu">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="fa fa-car"></i></span>
+                                    <span class="pcoded-mtext">Vehicle Management</span>
+                               
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class="">
+                                        <a href="../Vehicle-management/Add-Vehicle.htm">
+                                            <span class="pcoded-mtext">New Vehicle</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="../Vehicle-management/Vehicle-List.htm">
+                                            <span class="pcoded-mtext">Vehicle List</span>
+                                        </a>
+                                    </li>
+                
+                                </ul>
+                            </li>
+                            <li class="pcoded-hasmenu">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="fa fa-building"></i></span>
+                                    <span class="pcoded-mtext">Apartment Management </span>
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class="">
+                                        <a href="../Apartment-management/Add-Apartment.htm">
+                                            <span class="pcoded-mtext">New Apartment</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="../Apartment-management/Apartment-List.htm">
+                                            <span class="pcoded-mtext">Apartment List</span>
+                                        </a>
+                                    </li>
+                
+                                </ul>
+                
+                            </li>
+                            <li class="pcoded-hasmenu">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
+                                    <span class="pcoded-mtext">Waste Management</span>
+                    
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class="">
+                                        <a href="../Wastage-management/wastage-count.htm">
+                                            <span class="pcoded-mtext">Wastage Count</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="../Wastage-management/wastage-weighs.htm">
+                                            <span class="pcoded-mtext">Wastage Weighs</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="../Wastage-management/wastage-logs.htm">
+                                            <span class="pcoded-mtext">Wastage Logs</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="../Wastage-management/unload-point.htm">
+                                            <span class="pcoded-mtext">Unload point master</span>
+                                        </a>
+                                    </li>
+                
+                                </ul>
+                            </li>
+                            <li class="pcoded-hasmenu">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="fa fa-map-marker"></i></span>
+                                    <span class="pcoded-mtext">Route Management </span>
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class="">
+                                        <a href="../Route-management/Route-master.html">
+                                            <span class="pcoded-mtext">Route master</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="../Route-management/Route-mapping.html">
+                                            <span class="pcoded-mtext">Route mapping</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="../Route-management/Route-assigning.html">
+                                            <span class="pcoded-mtext">Route assigning</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class=" ">
+                                <a href="../Reports/Reports.htm">
+                                    <span class="pcoded-micon"><i class="fa fa-signal"></i></span>
+                                    <span class="pcoded-mtext">Report</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="pcoded-content">
+                    <div class="pcoded-inner-content">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper pd-t">
+                            <!-- Page-header start -->
+    <div class="page-header ">
+        <div class="row ">
+            <div class="col-lg-12">
+                <div class="page-header-breadcrumb">
+                    <ul class="breadcrumb-title">
+                        <li class="breadcrumb-item">
+                            <a href="../Dashboard/dashboard_Index.htm"> <i class="feather icon-home"></i> </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#!">Waste Management / Wastage-Count</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+                                   
+                                    <!-- Page-body start -->
+                                    <div class="page-body">
+                                        <!-- Filtering Foo-table card start -->
+                                        <div class="card">
+                                            <div class="card-block table-scroll">
+                                                <table id="demo-foo-filtering" class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>S.No</th>
+                                                            <th data-breakpoints="xs">Apartment Name</th>
+                                                            <th data-breakpoints="xs">Waste type</th>
+                                                            <th>Wastage-Count</th>                                                            
+                                                            <th data-breakpoints="xs">Measurement</th>
+                                                            <th>Status</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="Wastage-Count">                                                     
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- Filtering Foo-table card end -->
+
+                                    </div>
+                                    <!-- Page-body end -->
+
+<br/>
+
+                                    </div>
+                                    <!-- Page-body end -->
+
+                                </div>
+                            </div>
+                          
+                            <!-- Modal -->
+
+  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Warning Section Ends -->
+    <script type="text/javascript" src="..\..\files\assets\js\api-conditions.js"></script>
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="..\..\files\bower_components\jquery\js\jquery.min.js"></script>
+    <script type="text/javascript" src="..\..\files\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
+    <script type="text/javascript" src="..\..\files\bower_components\popper.js\js\popper.min.js"></script>
+    <script type="text/javascript" src="..\..\files\bower_components\bootstrap\js\bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="..\..\files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="..\..\files\bower_components\modernizr\js\modernizr.js"></script>
+    <script type="text/javascript" src="..\..\files\bower_components\modernizr\js\css-scrollbars.js"></script>
+
+    <!--FOO Table js-->
+
+    <script src="..\..\files\assets\pages\foo-table\js\foo-table-custom.js"></script>
+    <!-- i18next.min.js -->
+    <script type="text/javascript" src="..\..\files\bower_components\i18next\js\i18next.min.js"></script>
+    <script type="text/javascript" src="..\..\files\bower_components\i18next-xhr-backend\js\i18nextXHRBackend.min.js"></script>
+    <script type="text/javascript" src="..\..\files\bower_components\i18next-browser-languagedetector\js\i18nextBrowserLanguageDetector.min.js"></script>
+    <script type="text/javascript" src="..\..\files\bower_components\jquery-i18next\js\jquery-i18next.min.js"></script>
+    <!-- Custom js -->
+    <script src="./js/icon.js"></script>
+    <script src="..\..\files\assets\js\pcoded.min.js"></script>
+    <script src="..\..\files\assets\js\vartical-layout.min.js"></script>
+    <script src="..\..\files\assets\js\jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="..\..\files\assets\js\script.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    $(function() {
+        $('#sidebar1').load('../sidebar/sidebar.html')
+    })
+</script>
+<script>
+    var myHeaders = new Headers();
+    let token = loginCheck().data.token
+myHeaders.append("Authorization", `Bearer ${token}`);
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("http://assistlysolutions.com/ndl/api/wastage-count/list", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+    console.log(result.data.data)
+    let sno = 0;
+    let contentTable = document.querySelector('.table');
+    let contentTbody = document.createElement('tbody')
+    contentTable.appendChild(contentTbody);
+    result.data.map((data) => {
+        sno = sno + 1;
+        console.log(data)
+        let wastageStatus = ""
+        if (data.status == "0"){
+            wastageStatus = "Active"
+        }else{
+            wastageStatus = "Inactive"
+        }
+        let wastageType= ""
+        if(data.wastage_id == "1"){
+            wastageType = "Dry"
+        } else if(data.wastage_id = "2") {
+            wastageType = "Wet"
+        } else {
+            wastageType = "Hazard"
+        }
+        contentTbody.innerHTML += `
+        <tr class='footable-empty'>
+            <td>${sno}</td>            
+            <td>${data.apartment_name}</td>            
+            <td>${wastageType}</td>
+            <td>${data.wastage_count}</td>
+            <td>${data.measurement_type}</td>
+            <td>${wastageStatus}</td>
+        </tr>
+        `
+        
+    })
+    if(data_load === true){
+			$('#demo-foo-filtering').DataTable({
+					"dom": 'rtip',
+					"searching": false,
+					"paging": true,
+					"scrollX": true,
+					"columnDefs": [
+						{ "orderable": false, "targets": [ -1 ] }
+					],
+					"iDisplayLength": 10});
+
+		}
+  })
+  .catch(error => console.log('error', error));
+    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+</body>
+
+</html>

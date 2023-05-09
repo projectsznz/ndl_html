@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Unwaste Network</title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="#">
+    <meta name="keywords"
+        content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="#">
+    <!-- Favicon icon -->
+    <link rel="icon" href="..\..\files\assets\images\favicon.ico" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="..\..\files\bower_components\bootstrap\css\bootstrap.min.css">
+    <!-- radial chart.css -->
+    <link rel="stylesheet" href="..\..\files\assets\pages\chart\radial\css\radial.css" type="text/css" media="all">
+    <!-- feather Awesome -->
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\icon\feather\css\feather.css">
+    <!-- Bootstrap selectpicker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\css\style.css">
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\css\jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../Css/Index.css">
+
+</head>
+<!-- Menu sidebar static layout -->
+
+<body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+
+                    <div class="navbar-logo">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="feather icon-menu"></i>
+                        </a>
+                        <a href="">
+                            <img class="img-fluid" src="../..\files/assets/images/Logo-1.jpeg" alt="Theme-Logo">
+                        </a>
+                        <a class="mobile-options">
+                            <i class="feather icon-more-horizontal"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li class="header-search">
+                                <div class="main-search morphsearch-search">
+                                    <div class="input-group">
+                                        <span class="input-group-addon search-close"><i
+                                                class="feather icon-x"></i></span>
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-addon search-btn"><i
+                                                class="feather icon-search"></i></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#!" onclick="javascript:toggleFullScreen()">
+                                    <i class="feather icon-maximize full-screen"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav-right">
+                            <li class="user-profile header-notification">
+                                <div class="dropdown-primary dropdown">
+                                    <div class="dropdown-toggle" data-toggle="dropdown">
+                                        <img src="..\..\files\assets\images\avatar-4.jpg" class="img-radius"
+                                            alt="User-Profile-Image">
+                                        <span id="user"></span>
+                                        <i class="feather icon-chevron-down"></i>
+                                    </div>
+                                    <ul class="show-notification profile-notification dropdown-menu"
+                                        data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                        <li>
+                                            <a href="../auth-normal-sign-in.htm">
+                                                <i class="feather icon-log-out"></i> Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+
+            <!-- Sidebar starts-->
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="pcoded-inner-navbar main-menu">
+
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class=" ">
+                                    <a href="../Dashboard/dashboard_Index.htm">
+                                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                                        <span class="pcoded-mtext">Dashboard</span>
+                                    </a>
+
+                                </li>
+                                <li class="pcoded-hasmenu ">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                        <span class="pcoded-mtext">Admin User</span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="">
+                                            <a href="../Admin-user/Add-admin.htm">
+                                                <span class="pcoded-mtext">New Admin</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../Admin-user/Admin-List.htm">
+                                                <span class="pcoded-mtext">Admin List</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="pcoded-hasmenu ">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="fa fa-user-times"></i></span>
+                                        <span class="pcoded-mtext">Driver Management</span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="">
+                                            <a href="../Driver-management/Add-Driver.htm">
+                                                <span class="pcoded-mtext">New Driver</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../Driver-management/Driver-List.htm">
+                                                <span class="pcoded-mtext">Driver List</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="fa fa-car"></i></span>
+                                        <span class="pcoded-mtext">Vehicle Management</span>
+
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="">
+                                            <a href="../Vehicle-management/Add-Vehicle.htm">
+                                                <span class="pcoded-mtext">New Vehicle</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../Vehicle-management/Vehicle-List.htm">
+                                                <span class="pcoded-mtext">Vehicle List</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="fa fa-building"></i></span>
+                                        <span class="pcoded-mtext">Apartment Management </span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="">
+                                            <a href="../Apartment-management/Add-Apartment.htm">
+                                                <span class="pcoded-mtext">New Apartment</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../Apartment-management/Apartment-List.htm">
+                                                <span class="pcoded-mtext">Apartment List</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
+                                        <span class="pcoded-mtext">Waste Management</span>
+
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="">
+                                            <a href="../Wastage-management/wastage-count.htm">
+                                                <span class="pcoded-mtext">Wastage Count</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../Wastage-management/wastage-weighs.htm">
+                                                <span class="pcoded-mtext">Wastage Weighs</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../Wastage-management/wastage-logs.htm">
+                                                <span class="pcoded-mtext">Wastage Logs</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../Wastage-management/unload-point.htm">
+                                                <span class="pcoded-mtext">Unload point master</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="fa fa-map-marker"></i></span>
+                                        <span class="pcoded-mtext">Route Management </span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="">
+                                            <a href="../Route-management/Route-master.html">
+                                                <span class="pcoded-mtext">Route master</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../Route-management/Route-mapping.html">
+                                                <span class="pcoded-mtext">Route mapping</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="../Route-management/Route-assigning.html">
+                                                <span class="pcoded-mtext">Route assigning</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class=" ">
+                                    <a href="../Reports/Reports.htm">
+                                        <span class="pcoded-micon"><i class="fa fa-signal"></i></span>
+                                        <span class="pcoded-mtext">Report</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper pd-t">
+                                    <!-- Page-header start -->
+                                    <div class="page-header ">
+                                        <div class="row ">
+                                            <div class="col-lg-12">
+                                                <div class="page-header-breadcrumb">
+                                                    <ul class="breadcrumb-title">
+                                                        <li class="breadcrumb-item">
+                                                            <a href="index-1.htm"> <i class="feather icon-home"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="breadcrumb-item"><a href="#!">Wastage Management</a>
+                                                        </li>
+                                                        <li class="breadcrumb-item"><a href="#!">Wastage Logs</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Page-header end -->
+                                    <div class="page-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- Basic Form Inputs card start -->
+                                                <div class="card">
+                                                    <div class="card-block">
+                                                        <h4 class="sub-title">Wastage Logs</h4>
+                                                        <form id="wastage-weighs-form">
+                                                            <div class="row">
+                                                                
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 mg-btm">
+                                                                    <label class=" col-form-label">Route Master</label>
+                                                                    <select name="route_master" class="selectpicker col-12"
+                                                                        id="route_master">
+                                                                        <option value="all">All</option>
+                                                                    </select>
+                                                                </div>
+                                                                
+                                                              <div class="col-lg-6 col-md-6 col-sm-12 mg-btm">
+                                                                    <label class=" col-form-label">Date</label>
+                                                                    <input type="date" class="form-control col-12" id="current_date" name="current_date">
+                                                                </div>
+                                                    
+
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                                <!-- Basic Form Inputs card end -->
+                                                <div id="Result-Message" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                  
+                                                      <div class="modal-content"> 
+                                                        <!-- Div you want to update the content -->
+                                                        <div class="modal-body modal-content-message">
+                                                            
+                                                        </div>
+                                                      </div>
+                                                      <div class="modal-footer-message submit-btn">
+                                                        <button type="button"
+                                                            onclick="closeMessage()"
+                                                            class="btn btn-primary waves-effect waves-light closeMessage btn-square"
+                                                            data-dismiss="modal">Ok</button>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                                <div class="page-body">
+                                                    <!-- Filtering Foo-table card start -->
+                                                    <div class="card">
+                                                        <div class="card-block table-scroll">
+                                                            <table id="demo-foo-filtering" class="table table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Apratments Name</th>
+                                                                        <th>Driver Name</th>
+                                                                        <th>Driver Email</th>
+                                                                        <th>Vehicle Name</th>
+                                                                        <th>Wastage Count</th>
+                                                                        <th>Status</th>
+                                                                        <th>Date</th>
+                                                                        <th>Open / Completed</th>
+                                                                    </tr>
+            
+                                                                </thead>
+                                                                
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Filtering Foo-table card end -->
+            
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div id="styleSelector">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Required Jquery -->
+    <!-- import  jquery form website-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="..\..\files\assets\js\api-conditions.js"></script>
+
+    <script type="text/javascript" src="..\..\files\bower_components\jquery\js\jquery.min.js"></script>
+    <script type="text/javascript" src="..\..\files\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
+    <script type="text/javascript" src="..\..\files\bower_components\popper.js\js\popper.min.js"></script>
+    <script type="text/javascript" src="..\..\files\bower_components\bootstrap\js\bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript"
+        src="..\..\files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="..\..\files\bower_components\modernizr\js\modernizr.js"></script>
+    <script type="text/javascript" src="..\..\files\bower_components\modernizr\js\css-scrollbars.js"></script>
+    <!-- Chart js -->
+    <script type="text/javascript" src="..\..\files\bower_components\chart.js\js\Chart.js"></script>
+    <!-- Google map js -->
+    <script
+        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="..\..\files\assets\pages\google-maps\gmaps.js"></script>
+    <!-- gauge js -->
+    <script src="..\..\files\assets\pages\widget\gauge\gauge.min.js"></script>
+    <script src="..\..\files\assets\pages\widget\amchart\amcharts.js"></script>
+    <script src="..\..\files\assets\pages\widget\amchart\serial.js"></script>
+    <script src="..\..\files\assets\pages\widget\amchart\gauge.js"></script>
+    <script src="..\..\files\assets\pages\widget\amchart\pie.js"></script>
+    <script src="..\..\files\assets\pages\widget\amchart\light.js"></script>
+    <!-- Custom js -->
+    <script src='./js/icon.js'></script>
+    <script src='..\js\common_select.js'></script>
+
+    <script src="..\..\files\assets\js\pcoded.min.js"></script>
+    <script src="..\..\files\assets\js\vartical-layout.min.js"></script>
+    <script src="..\..\files\assets\js\jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="..\..\files\assets\pages\dashboard\crm-dashboard.min.js"></script>
+    <script type="text/javascript" src="..\..\files\assets\js\script.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        $(function () {
+            $('#sidebar').load('../sidebar/sidebar.html')
+            $(".selectpicker").selectpicker()
+
+            var myHeaders = new Headers();
+
+            let token = loginCheck().data.token
+            myHeaders.append("Authorization", `Bearer ${token}`);
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+           appendSelectOptions("api/route", requestOptions, '#route_master', "id", "name", "wastage-weighs-form")
+            
+            $(document).ready(function(){
+                $(".selectpicker").selectpicker('refresh');
+            })
+        })
+
+        $(document).ready(function(){
+
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const url_route_master_id = urlParams.get('route_master_id')
+            console.log(url_route_master_id);
+            const url_date = urlParams.get('date')
+            console.log(url_date);
+
+            // var route_id = $("#route_master").val();
+            //     var url_date = $("#url_date").val();
+            //     // alert(url_date);
+               if(url_route_master_id == ''){
+                    alert('Please Select route Master')
+                    return false
+               }
+            //    alert('passed')
+               var myHeaders = new Headers();
+            let token = loginCheck().data.token
+            myHeaders.append("Authorization", `Bearer ${token}`);
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+
+            fetch("http://assistlysolutions.com/ndl/api/route-mapping/list", requestOptions)
+                .then(response => response.json())
+                .then(results => {
+                    let sno = 0;
+                    $('#demo-foo-filtering tbody').empty();
+                    // console.log(results.data)
+                  
+                       
+                
+
+            fetch("http://assistlysolutions.com/ndl/api/wastage-log/list", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    let sno = 0;
+                    // console.log(results.data)
+
+                    let contentTable = document.querySelector('table');
+                    // console.log('contentTable', contentTable)
+                    let contentTbody = document.createElement('tbody')
+                    contentTable.appendChild(contentTbody);
+
+                    result.data.map((data) => {
+
+                        var apartment_name = [];
+                        var apartment_name1 = [];
+                        if(data.route_master_id == url_route_master_id){
+                            // console.log(results.data)
+                            results.data.map((datas) => {
+                                if(data.apartment_id == datas.apartment_id){
+                                    apartment_name.push(datas.apratments_name);
+                                   
+                                }
+                                if(data.apartment_id != datas.apartment_id){
+                                    apartment_name1.push(datas.apratments_name);
+                                   
+                                }
+                            })
+                            console.log(data);
+                            
+                            a = new Date(data.date);
+                            b = new Date(url_date);
+
+                            //  alert(a);
+                            //  alert(b);
+
+                            if(a.getTime() === b.getTime()){
+                                // console.log(a);
+                               
+                               if(apartment_name1.length > 0){
+                                curnt_date = data.updated_at
+                                stay = 'Completed'
+                               }
+                               else{
+                                curnt_date = data.updated_at;
+                                curnt_date = curnt_date.toString('YYYY-MM-dd')
+                                stay = 'Open'
+                               }
+                                let rowsList = `
+                                <tr class="footable-empty">
+                                    <td>${apartment_name[0]}</td>
+                                    <td>${data.driver_name}</td>
+                                    <td>${data.driver_email}</td>
+                                    <td>${data.vehicle_name}</td>
+                                    <td>${data.wastage_count}</td>
+                                    <td>${data.status}</td>
+                                    <td>${curnt_date}</td>
+                                    <td>${stay}</td>
+                                </tr> `
+                            
+
+
+                            
+                        // tableRow.innerHTML = rowsList;
+                        // console.log(rowsList);
+                        contentTbody.innerHTML += rowsList
+                    }
+
+
+
+                        }
+
+
+                    })
+                  
+                       
+                })
+                .catch(error => console.log('error', error));
+            })
+                .catch(error => console.log('error', error));
+               
+
+
+
+            $('#route_master').on('change', function (e) {
+                // alert();
+                $('#demo-foo-filtering tbody').empty();
+                $('#current_date').val('');
+            });
+            $("#current_date").change(function(){
+                var route_id = $("#route_master").val();
+                var current_date = $("#current_date").val();
+                // alert(current_date);
+               if(route_id == ''){
+                    alert('Please Select route Master')
+                    return false
+               }
+            //    alert('passed')
+               var myHeaders = new Headers();
+            let token = loginCheck().data.token
+            myHeaders.append("Authorization", `Bearer ${token}`);
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+
+            fetch("http://assistlysolutions.com/ndl/api/route-mapping/list", requestOptions)
+                .then(response => response.json())
+                .then(results => {
+                    let sno = 0;
+                    $('#demo-foo-filtering tbody').empty();
+                    // console.log(results.data)
+                  
+                       
+                
+
+            fetch("http://assistlysolutions.com/ndl/api/wastage-log/list", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    let sno = 0;
+                    // console.log(results.data)
+
+                    let contentTable = document.querySelector('table');
+                    // console.log('contentTable', contentTable)
+                    let contentTbody = document.createElement('tbody')
+                    contentTable.appendChild(contentTbody);
+
+                    result.data.map((data) => {
+
+                        var apartment_name = [];
+                        if(data.route_master_id == route_id){
+                            // console.log(results.data)
+                            results.data.map((datas) => {
+                                if(data.apartment_id == datas.apartment_id){
+                                    apartment_name.push(datas.apratments_name);
+                                   
+                                }
+                            })
+                            console.log(data);
+                            
+                            a = new Date(data.date);
+                            b = new Date(current_date);
+
+                            //  alert(a);
+                            //  alert(b);
+
+                            if(a.getTime() === b.getTime()){
+                                // console.log(a);
+                               curnt_date = data.updated_at
+                                let rowsList = `
+                                <tr class="footable-empty">
+                                    <td>${apartment_name[0]}</td>
+                                    <td>${data.driver_name}</td>
+                                    <td>${data.driver_email}</td>
+                                    <td>${data.vehicle_name}</td>
+                                    <td>${data.wastage_count}</td>
+                                    <td>${curnt_date.toString('YYYY-MM-dd')}</td>
+                                </tr> `
+                            
+
+
+                            
+                        // tableRow.innerHTML = rowsList;
+                        // console.log(rowsList);
+                        contentTbody.innerHTML += rowsList
+                    }
+
+
+
+                        }
+
+
+                    })
+                  
+                       
+                })
+                .catch(error => console.log('error', error));
+            })
+                .catch(error => console.log('error', error));
+               
+
+
+
+            });
+        });
+        </script>
+
+</body>
+
+</html>
