@@ -250,11 +250,6 @@
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="../Wastage-management/wastage-logs.htm">
-                                                <span class="pcoded-mtext">Wastage Logs</span>
-                                            </a>
-                                        </li>
-                                        <li class="">
                                             <a href="../Wastage-management/unload-point.htm">
                                                 <span class="pcoded-mtext">Unload point master</span>
                                             </a>
@@ -271,11 +266,6 @@
                                         <li class="">
                                             <a href="../Route-management/Route-master.html">
                                                 <span class="pcoded-mtext">Route master</span>
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a href="../Route-management/Route-mapping.html">
-                                                <span class="pcoded-mtext">Route mapping</span>
                                             </a>
                                         </li>
                                         <li class="">
@@ -297,10 +287,46 @@
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
                             <div class="main-body">
+                                 <!-- Page-body start -->
+                                 <div class="page-body">
+                                    <!-- Filtering Foo-table card start -->
+                                    <div class="card">
+                                        
+                                        <div class="card-block table-scroll">
+                                            <input type="hidden" id="finalApartmentDatas">
+                                            <div class="col-12">
+                                            <div class="col-6">
+                                               Start Date : <input type="date" name="start_date" id="start_date" class="form-control">
+                                            </div>
+                                            <div class="col-6">
+                                                End Date :
+                                            <input type="date" name="end_date" id="end_date" class="form-control">
+                                        </div>
+                                    </div>
+                                        <button style="width: 10%;float: right;" class="form-control" onclick="generateCSV('2022-03-01','2029-04-20','1')">Download</button>
+                                            <table id="demo-foo-filtering" class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>S.No</th>
+                                                        <th>Apratments Name</th>
+                                                        <th>Route Master Name</th>
+                                                        <th>Driver Name</th>
+                                                        <th>Vehicle Name</th>
+                                                        <th>Wastage Type</th>
+                                                        <th>Wastage Count</th>
+                                                        <th>Wastage Measurement</th>
+                                                        <th>Date</th>                                                     
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- Filtering Foo-table card end -->
+
+                                </div>
                                 <div class="page-wrapper">
                                     <div class="page-body">
-                                        <input type="hidden" id="finalApartmentDatas">
-                                        <button class="form-control" onclick="generateCSV()">Download</button>
+                                        
 
 
 
@@ -424,12 +450,33 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script>
-        function generateCSV() {
+        $('#end_date').on('change', function() {
+        var start_date = $('#start_date').val();
+        var end_date = $('#end_date').val();
+        if(start_date==''){
+            alert('Please select Start Date');
+            return false;
+        }else if(start_date > end_date){
+            alert("date1 is > date2");
+            $("#start_date").val(""); 
+            $("#end_dateQW").val(""); 
+            return false;
+        }
+        
+        generateCSV(start_date, end_date,'0');
+           
+        });
+        function generateCSV(start_date, end_date, stat) {
 
                  //Date Wise chart starts
+                //  alert(start_date);
         var formdataDateWise = new FormData();
-        formdataDateWise.append("formdate", "2022-03-01");
-        formdataDateWise.append("todate", "2029-04-20");
+        if($('#start_date').val() !=''){
+            var start_date = $('#start_date').val();
+        var end_date = $('#end_date').val();
+        }
+        formdataDateWise.append("formdate", start_date);
+        formdataDateWise.append("todate", end_date);
         //Fetch Data into table
         var requestOptionsDateWise = {
             method: 'POST',
@@ -441,6 +488,8 @@
         fetch("http://assistlysolutions.com/ndl/api/reports/date-wise-report", requestOptionsDateWise)
             .then(response => response.json())
             .then(result => {
+                // $("#demo-foo-filtering > tr").remove();
+                $('#demo-foo-filtering tbody').empty();
                 console.log('resoult', result)
                 let fetchData = result.data.data;
                 // fetchData = [...fetchData, {apartment_id: 1, apartment_name: 'Neo Nestle', wastage_count: '89.00' }, ]
@@ -460,12 +509,42 @@
                             finalApartmentData1.push(data);
                         })
                     }
-                    console.log('finalDateWise', tempDateWiseData)
+                    console.log('finalDateWise', finalApartmentData1)
                     finalDateWiseData.push(tempDateWiseData);
+
+                    let contentTable = document.querySelector('.table');
+                    let contentTbody = document.createElement('tbody')
+                    contentTable.appendChild(contentTbody);
+                    let sno = 0;
+
+                    finalApartmentData1.map((data) => {
+                        console.log('data' +data);
+                        sno = sno + 1;
+                        // if length of data not equal to zero must be delete the dome class="footable-empty"
+                        
+                        // var tableRow = document.createElement("tr");
+                        let rowsList = `
+        <tr class="footable-empty">
+            <td>${sno}</td>
+            <td>${data['Apratments Name']}</td>
+            <td>${data['Route Master Name']}</td>
+            <td>${data['Driver Name']}</td>
+            <td>${data['Vehicle Name']}</td>
+            <td>${data['Wastage Type']}</td>
+            <td>${data['Wastage Count']}</td>
+            <td>${data['Wastage Measurement']}</td>
+            <td>${data['Date']}</td>
+            
+        </tr> `
+                        // tableRow.innerHTML = rowsList;
+                        contentTbody.innerHTML += rowsList
+                    })
                 }
                 // $('#finalApartmentDatas').val(JSON.stringify(finalApartmentData1));
                 // var data = $('#finalApartmentDatas').val();
-            JSONToCSVConvertor(JSON.stringify(finalApartmentData1), "Report", true);
+                if(stat==1){
+                        JSONToCSVConvertor(JSON.stringify(finalApartmentData1), "Report", true);
+                }
             })
             .catch(error => console.log('error', error));
             
@@ -570,6 +649,69 @@
             }, {});
         }
 
+        var requestOptionsDateWise = {
+            method: 'POST',
+            headers: myHeaders,
+            body: formdataDateWise,
+            redirect: 'follow'
+        };
+
+
+        fetch("http://assistlysolutions.com/ndl/api/reports/date-wise-report", requestOptionsDateWise)
+            .then(response => response.json())
+            .then(result => {
+                console.log('resoults', result)
+                let fetchData = result.data.data;
+                // fetchData = [...fetchData, {apartment_id: 1, apartment_name: 'Neo Nestle', wastage_count: '89.00' }, ]
+                // {date: '2023-04-13', name: 'Hazardous', count: '9.00' },{date: '2023-04-17', name: 'Wet', count: '5.00' }]
+                var dateWiseData = groupBy(fetchData, 'date');
+                console.log('dateWiseData', dateWiseData)
+                const finalDateWiseData = [];
+                const finalApartmentData1 = [];
+                for (key in dateWiseData) {
+                    let count = 0
+                    if (dateWiseData.hasOwnProperty(key)) {
+                        var tempDateWiseData = {}
+                        dateWiseData[key].map((data) => {
+                            tempDateWiseData['date'] = data['date'];
+                            count = count + Number(data['wastage_weight'])
+                            tempDateWiseData['wastage_weight'] = count
+                            finalApartmentData1.push(data);
+                        })
+                    }
+                    console.log('finalDateWise1', finalApartmentData1)
+                    finalDateWiseData.push(tempDateWiseData);
+                    let sno = 0;
+                    let contentTable = document.querySelector('.table');
+                    let contentTbody = document.createElement('tbody')
+                    contentTable.appendChild(contentTbody);
+
+                    finalApartmentData1.map((data) => {
+                        console.log('data' +data);
+                        sno = sno + 1;
+                        // if length of data not equal to zero must be delete the dome class="footable-empty"
+                        
+                        // var tableRow = document.createElement("tr");
+                        let rowsList = `
+                            <tr class="footable-empty">
+                                <td>${sno}</td>
+                                <td>${data['Apratments Name']}</td>
+                                <td>${data['Route Master Name']}</td>
+                                <td>${data['Driver Name']}</td>
+                                <td>${data['Vehicle Name']}</td>
+                                <td>${data['Wastage Type']}</td>
+                                <td>${data['Wastage Count']}</td>
+                                <td>${data['Wastage Measurement']}</td>
+                                <td>${data['Date']}</td>
+                                
+                            </tr> `
+                        // tableRow.innerHTML = rowsList;
+                        contentTbody.innerHTML += rowsList
+                    })
+                }
+               
+            })
+            .catch(error => console.log('error', error));
 
         fetch("http://assistlysolutions.com/ndl/api/reports/apartment-wise", requestOptionsApartmentWise)
             .then(response => response.json())
