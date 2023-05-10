@@ -576,9 +576,9 @@ button.btn.dropdown-toggle.btn-light{
         };
 
         // Apartment dropdown
-         appendSelectOptions("api/route/list", requestOptions, '#route_name', "id", "name", "create-route-mapping-form")
+         appendSelectOptions("api/route", requestOptions, '#route_name', "id", "name", "create-route-mapping-form")
         // vehicle list Dropdown
-        appendSelectOptions("api/apartment/list", requestOptions, '#apartment_name', "id", "name", "create-route-mapping-form")
+        appendSelectOptions("api/apartment", requestOptions, '#apartment_name', "id", "name", "create-route-mapping-form")
      
 
     })
@@ -590,7 +590,7 @@ button.btn.dropdown-toggle.btn-light{
         myHeaders.append("Authorization", `Bearer ${token}`);
 
         var preUpdateMaster = {}
-        function updateRouteMapping(id, name, wastage_name, apartment_name, status,priority, route_id, apartment_id) {
+        function updateRouteMapping(id, name, wastage_name, apartment_name, status,priority, route_id) {
             // Apartment dropdown
             // appendSelectOptions("api/route", requestOptions, '#route-name', "id", "name", "update-route-master-form")
             //         // vehicle list Dropdown
@@ -603,7 +603,7 @@ button.btn.dropdown-toggle.btn-light{
             document.getElementById("apartment-name").value = apartment_name;
             document.getElementById("status").value = status;
             document.getElementById("priority_edit").value = priority;
-            preUpdateMaster = { id, name, wastage_name, apartment_name, status, apartment_id, route_id }
+            preUpdateMaster = { id, name, wastage_name, apartment_name, status }
         }
 
         const update = document.querySelector('.updateRouteMapping');
@@ -616,8 +616,8 @@ button.btn.dropdown-toggle.btn-light{
 
             var formdata = new FormData();
             // console.log('check', routeName, wastageType, apartmentName, status)
-            formdata.append("route_id", preUpdateMaster.route_id);
-            formdata.append("apartment_id", preUpdateMaster.apartment_id);
+            formdata.append("route_id", routeName);
+            // formdata.append("apartment_id", apartmentName);
             formdata.append("status", status);
             formdata.append("priority", priority);
             formdata.append("id", preUpdateMaster.id);
@@ -654,9 +654,9 @@ button.btn.dropdown-toggle.btn-light{
                             }
                 })
                 .then(err => {
-                    console.log('error-update', err)
-                    $('.modal-content-message').text(err)
-                    $('#Result-Message').modal('toggle')
+                    // console.log('error-update', err)
+                    // $('.modal-content-message').text(err)
+                    // $('#Result-Message').modal('toggle')
                 })
                 .finally(() => document.getElementById('update-route-master-form').reset())
         })
@@ -705,7 +705,6 @@ button.btn.dropdown-toggle.btn-light{
                                 data-status=${data.status}
                                 data-priority=${data.priority}
                                 data-route_id=${data.route_id}
-                                data-apartment_id=${data.apartment_id}
                                 data-target="#Edit" onclick="updateRouteMapping(this.getAttribute('data-id'),this.getAttribute('data-name'), this.getAttribute('data-wastage_name'), this.getAttribute('data-apartment_name'), this.getAttribute('data-status'), this.getAttribute('data-priority'), this.getAttribute('data-route_id'))">
                                 Edit</button>
                         </td>
