@@ -18,20 +18,31 @@
         content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="#">
     <!-- Favicon icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- Favicon icon -->
     <link rel="icon" href="..\..\files\assets\images\favicon.ico" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="..\..\files\bower_components\bootstrap\css\bootstrap.min.css">
-    <!-- radial chart.css -->
-    <link rel="stylesheet" href="..\..\files\assets\pages\chart\radial\css\radial.css" type="text/css" media="all">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\icon\themify-icons\themify-icons.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\icon\icofont\css\icofont.css">
     <!-- feather Awesome -->
     <link rel="stylesheet" type="text/css" href="..\..\files\assets\icon\feather\css\feather.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <!-- foo table Grid
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\pages\foo-table\css\footable.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\pages\foo-table\css\jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\pages\foo-table\css\footable.standalone.min.css"> -->
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="..\..\files\bower_components\datatables.net-bs4\css\dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\pages\data-table\css\buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="..\..\files\bower_components\datatables.net-responsive-bs4\css\responsive.bootstrap4.min.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="..\..\files\assets\css\style.css">
-    <link rel="stylesheet" type="text/css" href="..\..\files\assets\css\jquery.mCustomScrollbar.css">
     <link rel="stylesheet" type="text/css" href="../Css/Index.css">
+    <link rel="stylesheet" type="text/css" href="..\..\files\assets\css\jquery.mCustomScrollbar.css">
 </head>
 
 <body>
@@ -322,22 +333,32 @@
                                                 <!-- Page-body-2 start -->
                                                 <div class="page-body">
                                                     <!-- Filtering Foo-table card start -->
-                                                    <div class="card">
-                                                        <div class="card-block table-scroll">
+                                                    <div class="card-block">
+                                                        <div class="dt-responsive table-responsive">
                                                             <button type="button"
                                                                 style="padding: 7px 15px; float: right; margin-right: 30px"
                                                                 data-toggle="modal" data-target="#Create">Add</button>
-                                                            <table id="demo-foo-filtering" class="table table-striped">
+                                                            <table id="demo-foo-filtering" class="table table-striped table-bordered nowrap">
                                                                 <thead>
                                                                     <tr>
                                                                         <th>S.No</th>
                                                                         <th>Route name</th>
                                                                         <th>Apartment Name</th>
-                                                                        <th>Wastage Name</th>
+                                                                        <th>Priority </th>
                                                                         <th>Status</th>
                                                                         <th>Action</th>
                                                                     </tr>
                                                                 </thead>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <th>S.No</th>
+                                                                        <th>Route name</th>
+                                                                        <th>Apartment Name</th>
+                                                                        <th>Priority </th>
+                                                                        <th>Status</th>
+                                                                        <th>Action</th>
+                                                                    </tr>
+                                                                    </tfoot>
                                                             </table>
                                                         </div>
                                                     </div>
@@ -392,17 +413,12 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 mg-btm">
                                 <label class=" col-form-label">Route name</label>
-                                <select name="route-name" class="col-12 form-control"
-                                    id="route-name">
-                                    <option value="all">All</option>
-                                </select>
+                                <input type="text" name="route-name" class="col-12 form-control" id="route-name">
+                                <input type="hidden" id="route_id" name="route_id">
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 mg-btm">
                                 <label class=" col-form-label">Apartment Name</label>
-                                <select name="apartment-name" class="col-12 form-control"
-                                    id="apartment-name">
-                                    <option value="all">All</option>
-                                </select>
+                                <input type="text" name="apartment-name" class="col-12 form-control" id="apartment-name">
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 mg-btm">
                                 <label class=" col-form-label">Status</label>
@@ -410,6 +426,10 @@
                                     <option value="0">Active</option>
                                     <option value="1">Disabled</option>
                                 </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mg-btm">
+                                <label class=" col-form-label">Priority</label>
+                                <input type="number" name="priority_edit" class="col-12 form-control" id="priority_edit">
                             </div>
                         </div>
                     </form>
@@ -459,6 +479,10 @@
                                     <option value="1">Disabled</option>
                                 </select>
                             </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mg-btm">
+                                <label class=" col-form-label">Priority</label>
+                                <input type="number" name="priority" class="col-12 form-control" id="priority">
+                            </div>
 
                         </div>
                     </form>
@@ -475,7 +499,7 @@
         </div>
     </div>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Required Jquery -->
     <!-- import  jquery form website-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -486,7 +510,16 @@
     <script type="text/javascript" src="..\..\files\bower_components\popper.js\js\popper.min.js"></script>
     <script type="text/javascript" src="..\..\files\bower_components\bootstrap\js\bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-     <script type="text/javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="..\..\files\bower_components\datatables.net\js\jquery.dataTables.min.js"></script>
+    <script src="..\..\files\bower_components\datatables.net-buttons\js\dataTables.buttons.min.js"></script>
+    <script src="..\..\files\assets\pages\data-table\js\jszip.min.js"></script>
+    <script src="..\..\files\assets\pages\data-table\js\pdfmake.min.js"></script>
+    <script src="..\..\files\assets\pages\data-table\js\vfs_fonts.js"></script>
+    <script src="..\..\files\bower_components\datatables.net-buttons\js\buttons.print.min.js"></script>
+    <script src="..\..\files\bower_components\datatables.net-buttons\js\buttons.html5.min.js"></script>
+    <script src="..\..\files\bower_components\datatables.net-bs4\js\dataTables.bootstrap4.min.js"></script>
+    <script src="..\..\files\bower_components\datatables.net-responsive\js\dataTables.responsive.min.js"></script>
+    <script src="..\..\files\bower_components\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js"></script>
     <!-- jquery slimscroll js -->
     <script type="text/javascript"
         src="..\..\files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
@@ -543,9 +576,9 @@ button.btn.dropdown-toggle.btn-light{
         };
 
         // Apartment dropdown
-        appendSelectOptionsList("api/route/list", requestOptions, '#route_name', "id", "name", "create-route-mapping-form")
+         appendSelectOptions("api/route/list", requestOptions, '#route_name', "id", "name", "create-route-mapping-form")
         // vehicle list Dropdown
-        appendSelectOptionsList("api/apartment/list", requestOptions, '#apartment_name', "id", "name", "create-route-mapping-form")
+        appendSelectOptions("api/apartment/list", requestOptions, '#apartment_name', "id", "name", "create-route-mapping-form")
      
 
     })
@@ -557,26 +590,36 @@ button.btn.dropdown-toggle.btn-light{
         myHeaders.append("Authorization", `Bearer ${token}`);
 
         var preUpdateMaster = {}
-        function updateRouteMapping(id, name, wastage_name, apartment_name, status) {
-            // console.log(e)
+        function updateRouteMapping(id, name, wastage_name, apartment_name, status,priority, route_id, apartment_id) {
+            // Apartment dropdown
+            // appendSelectOptions("api/route", requestOptions, '#route-name', "id", "name", "update-route-master-form")
+            //         // vehicle list Dropdown
+            //         appendSelectOptions("api/apartment", requestOptions, '#apartment-name', "id", "name", "update-route-master-form")
+            // // console.log(e)
+            // alert(id);
+            // $('#route-name option[value='+id+']').attr('selected','selected');
+            // alert(priority);
             document.getElementById("route-name").value = name;
             document.getElementById("apartment-name").value = apartment_name;
             document.getElementById("status").value = status;
-            preUpdateMaster = { id, name, wastage_name, apartment_name, status }
+            document.getElementById("priority_edit").value = priority;
+            preUpdateMaster = { id, name, wastage_name, apartment_name, status, apartment_id, route_id }
         }
 
         const update = document.querySelector('.updateRouteMapping');
         update.addEventListener('click', (e) => {
             e.preventDefault()
             let routeName = document.getElementById('route-name').value;
-            let apartmentName = document.getElementById('apartment-name').value;
+            // let apartmentName = document.getElementById('apartment-name').value;
             let status = document.getElementById('status').value;
+            let priority = document.getElementById('priority_edit').value;
 
             var formdata = new FormData();
-            console.log('check', routeName, wastageType, apartmentName, status)
-            formdata.append("route_id", routeName);
-            formdata.append("apartment_id", apartmentName);
+            // console.log('check', routeName, wastageType, apartmentName, status)
+            formdata.append("route_id", preUpdateMaster.route_id);
+            formdata.append("apartment_id", preUpdateMaster.apartment_id);
             formdata.append("status", status);
+            formdata.append("priority", priority);
             formdata.append("id", preUpdateMaster.id);
             var updateRequestOptions = {
                 method: 'POST',
@@ -587,13 +630,28 @@ button.btn.dropdown-toggle.btn-light{
             fetch("http://assistlysolutions.com/ndl/api/route-mapping/edit", updateRequestOptions)
                 .then(response => response.json())
                 .then(result => {
-                    console.log('result-update', result)
-                    $('#Result-Message').modal('toggle')
-                    let contentMessage = document.querySelector('.modal-content-message');
-                    let contentstatus = document.createElement('div')
-                    contentstatus.innerHTML = "<p>" + result.message + "</p>"
-                    contentMessage.appendChild(contentstatus)
-                    document.location.reload(true);
+                    console.log(result)
+                                if(result.success== true){
+                                    Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: result.message,
+                                    showConfirmButton: false,
+                                    timer: 1000
+                                })
+                                setTimeout(
+                                function() 
+                                {
+                                    document.location.reload(true);
+                                    //do something special
+                                }, 5000);
+                            }else{
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: result.message
+                                })
+                            }
                 })
                 .then(err => {
                     console.log('error-update', err)
@@ -633,19 +691,22 @@ button.btn.dropdown-toggle.btn-light{
                     }
                     let rowList = `<tr>
                         <td>${sno}</td>
-                        <td>${data.route_id}</td>
+                        <td>${data.route_master_name}</td>
                         <td>${data.apratments_name}</td>
-                        <td>${data.wastage_name}</td>
+                        <td>${data.priority}</td>
                         <td>${routeStatus}</td>
                         <td>
                             <button type="button" class="tab-edit-btn"
                                 data-toggle="modal"
                                 data-id=${data.id}
-                                data-name=${data.route_id}
+                                data-name=${data.route_master_name}
                                 data-wastage_name=${data.wastage_name}
                                 data-apartment_name=${data.apratments_name}
                                 data-status=${data.status}
-                                data-target="#Edit" onclick="updateRouteMapping(this.getAttribute('data-id'),this.getAttribute('data-name'), this.getAttribute('data-wastage_name'), this.getAttribute('data-apartment_name'), this.getAttribute('data-status'))">
+                                data-priority=${data.priority}
+                                data-route_id=${data.route_id}
+                                data-apartment_id=${data.apartment_id}
+                                data-target="#Edit" onclick="updateRouteMapping(this.getAttribute('data-id'),this.getAttribute('data-name'), this.getAttribute('data-wastage_name'), this.getAttribute('data-apartment_name'), this.getAttribute('data-status'), this.getAttribute('data-priority'), this.getAttribute('data-route_id'))">
                                 Edit</button>
                         </td>
                     </tr>
@@ -676,15 +737,18 @@ button.btn.dropdown-toggle.btn-light{
                 const add = document.querySelector('.add');
                 add.addEventListener('click', (e) => {
                     e.preventDefault();
+                    
                     let routeMaster = document.getElementById('route_name');
                     let apartment_id = document.getElementsByClassName('apartment-name')[0];
+                    let priority = document.getElementById('priority');
                     let status = document.getElementById('createStatus');
                     // alert(upload_point.value);
                     var formdata = new FormData();
                     formdata.append("route_id", routeMaster.value);
                     formdata.append("apartment_id", apartment_id.value);
                     formdata.append("status", status.value);
-                    
+                    formdata.append("priority", priority.value);
+                    // alert(routeMaster.value);
 
 
 
@@ -696,11 +760,35 @@ button.btn.dropdown-toggle.btn-light{
                     };
 
                     fetch("http://assistlysolutions.com/ndl/api/route-mapping/create", requestOptions)
-                        .then(response => response.text())
+                        .then(response => response.json())
                         .then(result => {
                             console.log(result)
-                            alert('Data Added Successfully');
-                            document.location.reload(true);
+                                if(result.success== true){
+                                    Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: result.message,
+                                    showConfirmButton: false,
+                                    timer: 1000
+                                })
+                                setTimeout(
+                                function() 
+                                {
+                                    document.location.reload(true);
+                                    //do something special
+                                }, 5000);
+                            }else{
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: result.message
+                                })
+                            }
+                            
+
+                            
+                            // alert(result.message);
+                            // document.location.reload(true);
                     //         $('#Result-Message').modal('toggle')
                     // let contentMessage = document.querySelector('.modal-content-message');
                     // let contentstatus = document.createElement('div')
@@ -708,6 +796,12 @@ button.btn.dropdown-toggle.btn-light{
                     // contentMessage.appendChild(contentstatus)
                         })
                         .catch(error => {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: error,
+                                footer: '<a href="">Why do I have this issue?</a>'
+                            })
                             console.log('error', error)
                             $('.modal-content-message').text(error)
                             $('#Result-Message').modal('toggle')
