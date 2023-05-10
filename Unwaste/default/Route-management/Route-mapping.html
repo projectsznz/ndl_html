@@ -344,7 +344,7 @@
                                                                         <th>S.No</th>
                                                                         <th>Route name</th>
                                                                         <th>Apartment Name</th>
-                                                                        <th>Wastage Name</th>
+                                                                        <th>Priority </th>
                                                                         <th>Status</th>
                                                                         <th>Action</th>
                                                                     </tr>
@@ -354,7 +354,7 @@
                                                                         <th>S.No</th>
                                                                         <th>Route name</th>
                                                                         <th>Apartment Name</th>
-                                                                        <th>Wastage Name</th>
+                                                                        <th>Priority </th>
                                                                         <th>Status</th>
                                                                         <th>Action</th>
                                                                     </tr>
@@ -413,17 +413,12 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 mg-btm">
                                 <label class=" col-form-label">Route name</label>
-                                <select name="route-name" class="col-12 form-control"
-                                    id="route-name">
-                                    <option value="all">All</option>
-                                </select>
+                                <input type="text" name="route-name" class="col-12 form-control" id="route-name">
+                                <input type="hidden" id="route_id" name="route_id">
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 mg-btm">
                                 <label class=" col-form-label">Apartment Name</label>
-                                <select name="apartment-name" class="col-12 form-control"
-                                    id="apartment-name">
-                                    <option value="all">All</option>
-                                </select>
+                                <input type="text" name="apartment-name" class="col-12 form-control" id="apartment-name">
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 mg-btm">
                                 <label class=" col-form-label">Status</label>
@@ -431,6 +426,10 @@
                                     <option value="0">Active</option>
                                     <option value="1">Disabled</option>
                                 </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mg-btm">
+                                <label class=" col-form-label">Priority</label>
+                                <input type="number" name="priority_edit" class="col-12 form-control" id="priority_edit">
                             </div>
                         </div>
                     </form>
@@ -591,11 +590,19 @@ button.btn.dropdown-toggle.btn-light{
         myHeaders.append("Authorization", `Bearer ${token}`);
 
         var preUpdateMaster = {}
-        function updateRouteMapping(id, name, wastage_name, apartment_name, status) {
-            // console.log(e)
+        function updateRouteMapping(id, name, wastage_name, apartment_name, status,priority, route_id) {
+            // Apartment dropdown
+            // appendSelectOptions("api/route", requestOptions, '#route-name', "id", "name", "update-route-master-form")
+            //         // vehicle list Dropdown
+            //         appendSelectOptions("api/apartment", requestOptions, '#apartment-name', "id", "name", "update-route-master-form")
+            // // console.log(e)
+            // alert(id);
+            // $('#route-name option[value='+id+']').attr('selected','selected');
+            // alert(priority);
             document.getElementById("route-name").value = name;
             document.getElementById("apartment-name").value = apartment_name;
             document.getElementById("status").value = status;
+            document.getElementById("priority_edit").value = priority;
             preUpdateMaster = { id, name, wastage_name, apartment_name, status }
         }
 
@@ -603,14 +610,16 @@ button.btn.dropdown-toggle.btn-light{
         update.addEventListener('click', (e) => {
             e.preventDefault()
             let routeName = document.getElementById('route-name').value;
-            let apartmentName = document.getElementById('apartment-name').value;
+            // let apartmentName = document.getElementById('apartment-name').value;
             let status = document.getElementById('status').value;
+            let priority = document.getElementById('priority_edit').value;
 
             var formdata = new FormData();
-            console.log('check', routeName, wastageType, apartmentName, status)
+            // console.log('check', routeName, wastageType, apartmentName, status)
             formdata.append("route_id", routeName);
             formdata.append("apartment_id", apartmentName);
             formdata.append("status", status);
+            formdata.append("priority", priority);
             formdata.append("id", preUpdateMaster.id);
             var updateRequestOptions = {
                 method: 'POST',
@@ -621,13 +630,28 @@ button.btn.dropdown-toggle.btn-light{
             fetch("http://assistlysolutions.com/ndl/api/route-mapping/edit", updateRequestOptions)
                 .then(response => response.json())
                 .then(result => {
-                    console.log('result-update', result)
-                    $('#Result-Message').modal('toggle')
-                    let contentMessage = document.querySelector('.modal-content-message');
-                    let contentstatus = document.createElement('div')
-                    contentstatus.innerHTML = "<p>" + result.message + "</p>"
-                    contentMessage.appendChild(contentstatus)
-                    document.location.reload(true);
+                    console.log(result)
+                                if(result.success== true){
+                                    Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: result.message,
+                                    showConfirmButton: false,
+                                    timer: 1000
+                                })
+                                setTimeout(
+                                function() 
+                                {
+                                    document.location.reload(true);
+                                    //do something special
+                                }, 5000);
+                            }else{
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: result.message
+                                })
+                            }
                 })
                 .then(err => {
                     console.log('error-update', err)
@@ -646,7 +670,7 @@ button.btn.dropdown-toggle.btn-light{
         };
 
 
-        fetch("http://assistlysolutions.com/ndl/api/route-mapping", requestOptions)
+        fetch("http://assistlysolutions.com/ndl/api/route-mapping/list", requestOptions)
             .then(response => response.json())
             .then(result => {
                 // console.log(result);
@@ -655,7 +679,7 @@ button.btn.dropdown-toggle.btn-light{
                 contentTable.appendChild(contentTbody)
                 let sno = 0;
                 let data_load = false
-                result.data.data.map((data) => {
+                result.data.map((data) => {
                     console.log(data)
                     sno = sno + 1;
                     let data_load = true
@@ -667,26 +691,28 @@ button.btn.dropdown-toggle.btn-light{
                     }
                     let rowList = `<tr>
                         <td>${sno}</td>
-                        <td>${data.route_id}</td>
+                        <td>${data.route_master_name}</td>
                         <td>${data.apratments_name}</td>
-                        <td>${data.wastage_name}</td>
+                        <td>${data.priority}</td>
                         <td>${routeStatus}</td>
                         <td>
                             <button type="button" class="tab-edit-btn"
                                 data-toggle="modal"
                                 data-id=${data.id}
-                                data-name=${data.route_id}
+                                data-name=${data.route_master_name}
                                 data-wastage_name=${data.wastage_name}
                                 data-apartment_name=${data.apratments_name}
                                 data-status=${data.status}
-                                data-target="#Edit" onclick="updateRouteMapping(this.getAttribute('data-id'),this.getAttribute('data-name'), this.getAttribute('data-wastage_name'), this.getAttribute('data-apartment_name'), this.getAttribute('data-status'))">
+                                data-priority=${data.priority}
+                                data-route_id=${data.route_id}
+                                data-target="#Edit" onclick="updateRouteMapping(this.getAttribute('data-id'),this.getAttribute('data-name'), this.getAttribute('data-wastage_name'), this.getAttribute('data-apartment_name'), this.getAttribute('data-status'), this.getAttribute('data-priority'), this.getAttribute('data-route_id'))">
                                 Edit</button>
                         </td>
                     </tr>
     `
                     contentTbody.innerHTML += rowList;
                 })
-                if(result.data.data.length >0){
+                if(result.data.length >0){
                         $(document).ready( function () {
                             $('.table').DataTable({
                                 "dom": 'rtip',
@@ -710,6 +736,7 @@ button.btn.dropdown-toggle.btn-light{
                 const add = document.querySelector('.add');
                 add.addEventListener('click', (e) => {
                     e.preventDefault();
+                    
                     let routeMaster = document.getElementById('route_name');
                     let apartment_id = document.getElementsByClassName('apartment-name')[0];
                     let priority = document.getElementById('priority');
